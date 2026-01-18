@@ -1,0 +1,83 @@
+theme = "github_dark_colorblind"
+
+[editor]
+line-number = "absolute"
+mouse = false
+bufferline = "always"
+rulers = [80]
+color-modes = true
+cursorline = true
+gutters = ["diagnostics","spacer","line-numbers","spacer","diff","spacer"]
+scrolloff = 5
+default-line-ending = "native"
+
+[editor.statusline]
+separator = "┊"
+right = [
+  "diagnostics",
+  "selections",
+  "primary-selection-length",
+  "position",
+  "total-line-numbers",
+  "position-percentage",
+  "file-encoding",
+  "file-line-ending",
+  "file-type"
+]
+left = [
+  "mode",
+  "file-name",
+  "read-only-indicator"
+]
+center = ["spinner","version-control"]
+
+# version-control
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.soft-wrap]
+enable = true
+
+[editor.indent-guides]
+render = true
+character = "┊"
+skip-levels = 0
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+tabpad = "all"
+nbsp = "all"
+nnbsp = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+tab = "→"
+tabpad = "·"
+space = "·"
+newline = "⏎"
+nbsp = "⍽"
+nnbsp = "␣"
+
+[keys.normal]
+# Lazygit shortcut
+C-g = [
+  ":write-all", # save all buffers
+  ":new", # create new empty buffer
+  ":insert-output lazygit", # runs lazygit
+  ":buffer-close!", # when exit lazygit kill the previously empty buffer
+  ":redraw", # re-render the ui
+  ":reload-all" # update changes
+]
+
+x = "select_line_below"
+X = "select_line_above"
